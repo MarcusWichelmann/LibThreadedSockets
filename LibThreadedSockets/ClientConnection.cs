@@ -13,13 +13,7 @@ namespace LibThreadedSockets
     {
         public int ClientId { get; }
 
-        public IPEndPoint RemoteEndPoint
-        {
-            get
-            {
-                return (IPEndPoint)ConnectionSocket.RemoteEndPoint;
-            }
-        }
+        public IPEndPoint RemoteEndPoint => (IPEndPoint)ConnectionSocket.RemoteEndPoint;
 
         internal const int BufferSize = 4096;
 
@@ -32,5 +26,7 @@ namespace LibThreadedSockets
             ClientId = clientId;
             ConnectionSocket = connectionSocket;
         }
+
+        public void Send(byte[] data) => ConnectionSocket.Send(data);
     }
 }

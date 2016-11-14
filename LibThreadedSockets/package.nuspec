@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>$id$</id>
-    <version>1.0.0.0</version>
+    <version>1.0.1</version>
     <title>
     </title>
     <authors>$author$</authors>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/MarcusWichelmann/LibThreadedSockets</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initial&amp;#x0020;Release</releaseNotes>
+    <releaseNotes>ClientConnection-Api&amp;#x0020;update</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>
     </tags>

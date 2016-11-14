@@ -119,7 +119,7 @@ namespace LibThreadedSockets
         {
             try
             {
-                clientConnection.ConnectionSocket.Send(data);
+                clientConnection.Send(data);
             }
             catch(Exception ex)
             {
