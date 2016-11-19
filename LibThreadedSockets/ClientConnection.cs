@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -21,12 +22,17 @@ namespace LibThreadedSockets
 
         internal byte[] Buffer { get; } = new byte[BufferSize];
 
+        private NetworkStream _stream;
+
         internal ClientConnection(int clientId, Socket connectionSocket)
         {
             ClientId = clientId;
             ConnectionSocket = connectionSocket;
+
+            _stream = new NetworkStream(ConnectionSocket);
         }
 
         public void Send(byte[] data) => ConnectionSocket.Send(data);
+        public void Send(MemoryStream stream) => stream.WriteTo(_stream);
     }
 }
