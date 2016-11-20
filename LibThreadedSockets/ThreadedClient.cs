@@ -47,9 +47,13 @@ namespace LibThreadedSockets
                 {
                     byte[] data = buffer.Take(bytesReceived).ToArray();
                     DataReceived?.Invoke(this, new DataReceivedEventArgs(data));
-                }
 
-                BeginReceive();
+                    BeginReceive();
+                }
+                else
+                {
+                    Disconnected?.Invoke(this, EventArgs.Empty);
+                }
             }
             catch
             {
