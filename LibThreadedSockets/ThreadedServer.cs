@@ -197,9 +197,15 @@ namespace LibThreadedSockets
                 {
                     byte[] data = clientConnection.Buffer.Take(bytesReceived).ToArray();
                     ClientDataReceived?.Invoke(this, new ClientDataReceivedEventArgs(clientConnection, data));
-                }
 
-                BeginReceive(clientConnection);
+                    BeginReceive(clientConnection);
+                }
+                else
+                {
+                    Connections.Remove(clientConnection);
+
+                    ClientDisconnected?.Invoke(this, new ClientDisconnectedEventArgs(clientConnection));
+                }
             }
             catch(Exception ex)
             {
