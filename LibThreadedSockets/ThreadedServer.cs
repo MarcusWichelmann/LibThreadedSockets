@@ -197,6 +197,7 @@ namespace LibThreadedSockets
                 {
                     byte[] data = clientConnection.Buffer.Take(bytesReceived).ToArray();
                     ClientDataReceived?.Invoke(this, new ClientDataReceivedEventArgs(clientConnection, data));
+                    clientConnection.RaiseDataReceived(data);
 
                     BeginReceive(clientConnection);
                 }

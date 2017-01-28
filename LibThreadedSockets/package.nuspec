@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>$id$</id>
-    <version>1.0.3</version>
+    <version>1.0.5</version>
     <title>
     </title>
     <authors>$author$</authors>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/MarcusWichelmann/LibThreadedSockets</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Bug&amp;#x0020;fixed&amp;#x0020;that&amp;#x0020;might&amp;#x0020;cause&amp;#x0020;high&amp;#x0020;cpu&amp;#x0020;usage&amp;#x0020;when&amp;#x0020;closing&amp;#x0020;the&amp;#x0020;connection.</releaseNotes>
+    <releaseNotes>Add&amp;#x0020;DataReceived&amp;#x0020;event&amp;#x0020;to&amp;#x0020;ClientConnection&amp;#x0020;class</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>
     </tags>

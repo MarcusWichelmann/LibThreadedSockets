@@ -12,6 +12,10 @@ namespace LibThreadedSockets
 {
     public class ClientConnection
     {
+        public event DataReceivedEventHandler DataReceived;
+
+        public delegate void DataReceivedEventHandler(object sender, DataReceivedEventArgs e);
+
         public int ClientId { get; }
 
         public IPEndPoint RemoteEndPoint => (IPEndPoint)ConnectionSocket.RemoteEndPoint;
@@ -34,5 +38,7 @@ namespace LibThreadedSockets
 
         public void Send(byte[] data) => ConnectionSocket.Send(data);
         public void Send(MemoryStream stream) => stream.WriteTo(_stream);
+
+        internal void RaiseDataReceived(byte[] data) => DataReceived?.Invoke(this, new DataReceivedEventArgs(data));
     }
 }
