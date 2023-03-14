@@ -101,6 +101,7 @@ namespace LibThreadedSockets
             foreach(ClientConnection clientConnection in Connections.ToArray())
                 DisconnectClient(clientConnection);
 
+            socket.Shutdown(SocketShutdown.Both);
             socket.Close();
 
             Connections.Clear();
